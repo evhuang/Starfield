@@ -10,10 +10,23 @@ public void draw()
 class NormalParticle
 {
 	//your code here
+	double x, y, speed, angle;
+	int 
+	void move()
+	{
+		x = Math.cos(angle) * speed + x;
+		y = Math.sin(angle) * speed + y;
+	}
+	void show()
+	{
+		fill(255);
+	}
 }
 interface Particle
 {
 	//your code here
+	public void show();
+	public void move();
 }
 class OddballParticle //uses an interface
 {
@@ -23,4 +36,3 @@ class JumboParticle //uses inheritance
 {
 	//your code here
 }
-

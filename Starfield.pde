@@ -1,7 +1,13 @@
 //your code here
+Particle [] ballPit;
 public void setup()
 {
 	//your code here
+	ballPit[] = new Particle[300];
+	for(int i = 0; i < ballPit.length; i++)
+	{
+		ballPit[i] = new Particle();
+	}
 }
 public void draw()
 {
@@ -11,7 +17,6 @@ class NormalParticle
 {
 	//your code here
 	double x, y, speed, angle;
-	int 
 	void move()
 	{
 		x = Math.cos(angle) * speed + x;
@@ -28,11 +33,28 @@ interface Particle
 	public void show();
 	public void move();
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle //uses an interface
 {
 	//your code here
+	public void show()
+		{
+
+		}
+	public void move()
+		{
+
+		}
 }
-class JumboParticle //uses inheritance
+class JumboParticle extends Particle//uses inheritance
 {
 	//your code here
+	public void show()
+		{
+
+		}
+	public void move()
+		{
+
+		}
 }
+

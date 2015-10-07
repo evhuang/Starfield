@@ -11,7 +11,6 @@ public void setup()
 	}
 
 		ballPit[0] = new OddballParticle();
-		
 }
 public void draw()
 {
@@ -27,6 +26,7 @@ class NormalParticle implements Particle
 	//your code here
 	double nX, nY, dSpeed, dAngle;
 	int cColor;
+	NormalParticle()
 	{
 		nX = 640;
 		nY = 350;
@@ -55,13 +55,16 @@ interface Particle
 class OddballParticle implements Particle //uses an interface
 {
 	//your code here
+	int oX = 640;
+	int oY = 350;
 	public void show()
 		{
 
 		}
 	public void move()
 		{
-
+			oX = oX + (int)(Math.random() * 20 - 10);
+			oY = oY + (int)(Math.random() * 10 - 5);
 		}
 }
 class JumboParticle //uses inheritance
@@ -76,3 +79,4 @@ class JumboParticle //uses inheritance
 
 		}
 }
+

@@ -3,7 +3,8 @@ Particle [] ballPit;
 public void setup()
 {
 	//your code here
-	size(1280,650);
+	size(1280,800);
+	background(0);
 	ballPit = new Particle[150];
 	for(int i = 0; i < ballPit.length; i++)
 	{
@@ -29,7 +30,7 @@ class NormalParticle implements Particle
 	NormalParticle()
 	{
 		nX = 640;
-		nY = 325;
+		nY = 400;
 		dSpeed = 5;
 		dAngle = (Math.random()*Math.PI*2);
 		cColor = color((int)(Math.random()*255-50),(int)(Math.random()*255-50),(int)(Math.random()*255-50));
@@ -41,14 +42,16 @@ class NormalParticle implements Particle
 		if(nX >= 1280 || nY >= 650)
 		{
 		nX = 640;
-		nY = 325;
+		nY = 400;
 		}
+		dAngle = dAngle - 0.018;
 		
 	}
 	public void show()
 	{
 		noStroke();
 		fill(cColor);
+
 		ellipse((float)nX,(float)nY,20,20);
 	}
 }
@@ -63,6 +66,8 @@ class OddballParticle implements Particle //uses an interface
 	//your code here
 	int oX = 500;
 	int oY = 500;
+	double dAngle = (Math.random()*Math.PI*2);
+	double dSpeed = 10;
 	public void show()
 		{
 			noStroke();
@@ -70,8 +75,9 @@ class OddballParticle implements Particle //uses an interface
 		}
 	public void move()
 		{
-			oX = oX + (int)(Math.random() * 20 - 10);
-			oY = oY + (int)(Math.random() * 10 - 5);
+			oX = Math.cos(dAngle) * dSpeed + oX;
+			oY = Math.sin(dAngle) * dSpeed + oY;
+			dAngle = dAngle + 0.018;
 		}
 }
 class JumboParticle extends NormalParticle//uses inheritance
@@ -86,6 +92,7 @@ class JumboParticle extends NormalParticle//uses inheritance
 		{
 			nX = Math.cos(dAngle) * dSpeed + nX;
 			nY = Math.sin(dAngle) * dSpeed + nY;
+			dAngle = dAngle - 0.018;
 		}
 }
 

@@ -23,6 +23,14 @@ public void draw()
 	}
 	fill(0,0,0,20);
 	rect(0,0,1280,800);
+	if(mousePressed == true)
+	{
+		for(int i = 0; i < ballPit.length; i++)
+		{
+		ballPit[i].move();
+		ballPit[i].show();
+		}
+	}
 }
 class NormalParticle implements Particle
 {
@@ -41,11 +49,7 @@ class NormalParticle implements Particle
 	{
 		nX = (Math.cos(dAngle) * dSpeed + nX);
 		nY = (Math.sin(dAngle) * dSpeed + nY);
-		if(frameCount % 355 == 0)
-		{
-		nX = 640;
-		nY = 400;
-		}
+		
 		dAngle = dAngle - 0.018;
 		
 	}
@@ -96,12 +100,7 @@ class JumboParticle extends NormalParticle//uses inheritance
 		{
 			nX = Math.cos(dAngle) * dSpeed + nX;
 			nY = Math.sin(dAngle) * dSpeed + nY;
-			if(frameCount % 355 == 0)
-				{
-					nX = 640;
-					nY = 400;
-				}
 			dAngle = dAngle - 0.018;
 		}
 }
-
+ 

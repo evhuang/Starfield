@@ -96,6 +96,11 @@ class JumboParticle extends NormalParticle//uses inheritance
 		{
 			nX = Math.cos(dAngle) * dSpeed + nX;
 			nY = Math.sin(dAngle) * dSpeed + nY;
+			if(frameCount % 355 == 0)
+				{
+					nX = 640;
+					nY = 400;
+				}
 			dAngle = dAngle - 0.018;
 		}
 }

@@ -5,7 +5,7 @@ public void setup()
 	//your code here
 	size(1280,800);
 	background(255);
-	ballPit = new Particle[450];
+	ballPit = new Particle[500];
 	for(int i = 0; i < ballPit.length; i++)
 	{
 		ballPit[i] = new NormalParticle();
